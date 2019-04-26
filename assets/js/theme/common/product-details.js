@@ -5,6 +5,8 @@ import ImageGallery from '../product/image-gallery';
 import modalFactory, { showAlertModal } from '../global/modal';
 import _ from 'lodash';
 import Wishlist from '../wishlist';
+import {addSetupFee, hasSetupFee} from '../cc/cc-setupfees';
+
 
 export default class ProductDetails {
     constructor($scope, context, productAttributesData = {}) {
@@ -340,6 +342,9 @@ export default class ProductDetails {
      *
      */
     addProductToCart(event, form) {
+        console.log('setupfee?' + hasSetupFee());
+        console.log('addProdductToCart');
+        console.log('change');
         const $addToCartBtn = $('#form-action-addToCart', $(event.target));
         const originalBtnVal = $addToCartBtn.val();
         const waitMessage = $addToCartBtn.data('waitMessage');
