@@ -4,7 +4,9 @@
         <title>{{ head.title }}</title>
         {{{ resourceHints }}}
         {{{ head.meta_tags }}}
+        <!-- after meta_tags -->
         {{{ head.config }}}
+        <!-- blockhead -->
         {{#block "head"}} {{/block}}
 
         <link href="{{ head.favicon }}" rel="shortcut icon">
@@ -17,6 +19,7 @@
 
         {{ getFontsCollection }}
         {{{stylesheet '/assets/css/theme.css'}}}
+        {{{stylesheet '/assets/css/cc-theme.css'}}}
 
         {{{head.scripts}}}
         {{{head.rsslinks}}}
